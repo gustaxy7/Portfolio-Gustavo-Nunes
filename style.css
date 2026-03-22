@@ -1,0 +1,114 @@
+/* Variáveis para facilitar a troca de tema */
+:root {
+    --bg-body: #ffffff;
+    --bg-container: #f9f9f9;
+    --text-main: #333333;
+    --nav-bg: #eeeeee;
+    --accent-color: #2563eb;
+    --border-color: #cccccc;
+}
+
+/* Cores do Tema Escuro */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-container: #1e1e1e;
+    --text-main: #e0e0e0;
+    --nav-bg: #2d2d2d;
+    --accent-color: #60a5fa;
+    --border-color: #444444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+/* Menu de Navegação */
+header {
+    background-color: var(--nav-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Destaque para a página atual */
+nav a.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Botão de Tema */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Container de Conteúdo */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--bg-container);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Formulário de Contato */
+form { display: flex; flex-direction: column; gap: 15px; }
+.field { display: flex; flex-direction: column; }
+input, textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-body);
+    color: var(--text-main);
+}
+button#btn-enviar {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    main { margin: 10px; padding: 15px; }
+}
